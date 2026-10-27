@@ -1,262 +1,151 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Personal Website</title>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-    <!-- Creative fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #FFF7EB;
+        color: #4A4A4A;
+        line-height: 1.7;
+    }
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    header {
+        background: linear-gradient(135deg, #CC3A63, #A2AB73);
+        color: white;
+        text-align: center;
+        padding: 65px 20px;
+    }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f7f3ff;
-            color: #30234a;
-            line-height: 1.7;
-        }
+    header h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
 
-        header {
-            background: linear-gradient(135deg, #6c3bd1, #a16ae8);
-            color: white;
-            text-align: center;
-            padding: 65px 20px;
-        }
+    header p {
+        font-size: 17px;
+        color: #FFF7EB;
+    }
 
+    nav {
+        background-color: #A2AB73;
+        text-align: center;
+        padding: 15px;
+    }
+
+    nav a {
+        color: #FFF7EB;
+        text-decoration: none;
+        margin: 0 18px;
+        font-weight: 600;
+    }
+
+    nav a:hover {
+        color: #CC3A63;
+    }
+
+    section {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 30px;
+    }
+
+    h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 32px;
+        color: #CC3A63;
+        margin-bottom: 18px;
+    }
+
+    .about {
+        background-color: #F9F0E0;
+        border-radius: 20px;
+        padding: 35px;
+        box-shadow: 0 8px 25px rgba(162, 171, 115, 0.20);
+    }
+
+    .about p {
+        margin-bottom: 12px;
+    }
+
+    .interests {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .tag {
+        background-color: #FFF7EB;
+        color: #CC3A63;
+        border-radius: 25px;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 22px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        border-radius: 18px;
+        box-shadow: 0 7px 18px rgba(162, 171, 115, 0.25);
+        transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+        transform: translateY(-6px);
+    }
+
+    .caption {
+        text-align: center;
+        margin-top: 10px;
+        font-weight: 600;
+        color: #A2AB73;
+    }
+
+    .goals {
+        background: linear-gradient(135deg, #F9F0E0, #FFF7EB);
+        border: 2px solid #A2AB73;
+        border-radius: 20px;
+        padding: 30px;
+    }
+
+    footer {
+        background-color: #CC3A63;
+        color: #FFF7EB;
+        text-align: center;
+        padding: 25px;
+        margin-top: 50px;
+    }
+
+    footer span {
+        color: #F9F0E0;
+    }
+
+    @media (max-width: 600px) {
         header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 17px;
-            color: #f0e7ff;
-        }
-
-        nav {
-            background-color: #FFE4E1;
-            text-align: center;
-            padding: 15px;
+            font-size: 35px;
         }
 
         nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 18px;
-            font-weight: 600;
-        }
-
-        nav a:hover {
-            color: #70ead6;
+            margin: 0 8px;
+            font-size: 13px;
         }
 
         section {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 30px;
+            padding: 20px;
         }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            color: #7041bd;
-            margin-bottom: 18px;
-        }
-
-        .about {
-            background-color: white;
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 8px 25px rgba(75, 45, 120, 0.10);
-        }
-
-        .about p {
-            margin-bottom: 12px;
-        }
-
-        .interests {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .tag {
-            background-color: #FFF7F8;
-            color: #57349a;
-            border-radius: 25px;
-            padding: 8px 16px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 22px;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 230px;
-            object-fit: cover;
-            border-radius: 18px;
-            box-shadow: 0 7px 18px rgba(55, 35, 80, 0.15);
-            transition: transform 0.3s;
-        }
-
-        .gallery img:hover {
-            transform: translateY(-6px);
-        }
-
-        .caption {
-            text-align: center;
-            margin-top: 10px;
-            font-weight: 600;
-            color: #5e4387;
-        }
-
-        .goals {
-            background: linear-gradient(135deg, #d9fff5, #eee5ff);
-            border-radius: 20px;
-            padding: 30px;
-        }
-
-        footer {
-            background-color: #38245f;
-            color: white;
-            text-align: center;
-            padding: 25px;
-            margin-top: 50px;
-        }
-
-        footer span {
-            color: #70ead6;
-        }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 35px;
-            }
-
-            nav a {
-                margin: 0 8px;
-                font-size: 13px;
-            }
-
-            section {
-                padding: 20px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <header>
-        <h1>Hello, Welcome to My Website!</h1>
-        <p>A little look into my life, interests, and goals ✨</p>
-    </header>
-
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#gallery">My Gallery</a>
-        <a href="#goals">My Goals</a>
-    </nav>
-
-    <section id="about">
-        <div class="about">
-            <h2>About Me</h2>
-
-            <p>
-                Hi! My name is Pal, and I am a college student studying
-                Information Technology with an interest in cybersecurity.
-                I enjoy learning about technology, solving problems, and
-                discovering how computers and networks work.
-            </p>
-
-            <p>
-                Outside of school, I enjoy spending time with family and
-                friends, exploring new places, and learning new things.
-                I believe that every experience is an opportunity to grow
-                and become a better version of myself.
-            </p>
-
-            <p>
-                My goal is to build a career in technology, gain hands-on
-                experience, and continue developing skills that will help
-                me in the future.
-            </p>
-
-            <div class="interests">
-                <span class="tag"> Technology</span>
-                <span class="tag"> Cybersecurity</span>
-                <span class="tag"> Learning</span>
-                <span class="tag"> Exploring</span>
-                <span class="tag"> Personal Growth</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery">
-        <h2>My Gallery</h2>
-        <p style="margin-bottom: 22px;">
-            A few things that inspire me and represent my interests.
-        </p>
-
-        <div class="gallery">
-
-            <div>
-                <img
-                    src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=700&q=80"
-                    alt="People working together with computers">
-                <p class="caption">Technology & Innovation </p>
-            </div>
-
-            <div>
-                <img
-                    src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=700&q=80"
-                    alt="Beautiful mountain lake and nature">
-                <p class="caption">Exploring the World </p>
-            </div>
-
-            <div>
-                <img
-                    src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=700&q=80"
-                    alt="Friends enjoying time together">
-                <p class="caption">Family & Friends </p>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="goals">
-        <div class="goals">
-            <h2>My Goals for the Future</h2>
-
-            <p>
-                I want to continue expanding my knowledge of information
-                technology and cybersecurity, gain real-world experience,
-                and challenge myself with new opportunities. In the future,
-                I hope to use my skills to solve problems and possibly build
-                my own technology business.
-            </p>
-        </div>
-    </section>
-
-    <footer>
-        <p>Thank You | <span>My Personal Website</span></p>
-        <p>Thanks for visiting!</p>
-    </footer>
-
-</body>
-</html>
+    }
+</style>
